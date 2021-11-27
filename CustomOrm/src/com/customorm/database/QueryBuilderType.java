@@ -1,5 +1,5 @@
 package com.customorm.database;
 
 public enum QueryBuilderType {
-	INSERT, UPDATE, DELETE, SELECT
+	INSERT, UPDATE, DELETE, SELECT, CREATE
 }

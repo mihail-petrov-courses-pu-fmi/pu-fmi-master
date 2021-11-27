@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.Set;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
@@ -50,48 +51,7 @@ public class Database {
 		
 		return dbInstance;
 	}
-	
-	// v1
-	public String insert(
-			String table, 
-			String[] intoCollection, 
-			String[] valueCollection
-	) {
 		
-		// INSERT INTO {TABLE_NAME} ({COLUMNS}) VALUES({})
-		
-		String intoQueryBuilder = "";
-		for(String column : intoCollection) {
-			intoQueryBuilder += (column + ","); 
-		}
-		String columSet  =  intoQueryBuilder.substring(0, intoQueryBuilder.length() - 1);
-		intoQueryBuilder = " (" + columSet  + ") ";
-		
-		
-		String valueQueryBuilder = "";
-		for(String value : valueCollection) {
-			valueQueryBuilder += (value + ",");
-		}
-		
-		String valueSet = valueQueryBuilder.substring(0, valueQueryBuilder.length() - 1);
-		valueQueryBuilder = " VALUES(" + valueSet + ") ";
-		
-		String query = " INSERT INTO " 	+ 
-					   table 			+
-					   intoQueryBuilder +
-					   valueQueryBuilder;
-		return query;
-	}
-	
-	// v2
-	public String insert(String table, HashMap<String, String> data) {
-		
-		String[] intoCollection  = data.keySet().toArray(new String[0]);
-		String[] valueCollection = data.values().toArray(new String[0]); 
-		
-		return this.insert(table, intoCollection, valueCollection);
-	}
-	
 	// v3
 	public Database insert(String table) {
 		
@@ -187,6 +147,26 @@ public class Database {
 		return this;
 	}
 	
+	
+	public Database createTable(String table, HashMap<String, String> columns) {
+		
+		this.queryBuilderType = QueryBuilderType.CREATE;
+		StringBuilder builder = new StringBuilder();
+		builder.append("CREATE TABLE " + table + " ( ");
+		
+		Set<String> columnKeyCollection =   columns.keySet();
+		for(String columnKey : columnKeyCollection ) {
+			String value = columns.get(columnKey);
+			builder.append(columnKey + " " + value + ","); 
+		}
+		
+		builder.deleteCharAt(builder.length() - 1);
+		builder.append(");");
+		
+		this.query = builder.toString();
+		return this;
+	}
+	
 	public void exec() {
 
 		this.query = this.queryProcessor();
@@ -232,6 +212,10 @@ public class Database {
 	private String queryProcessor() {
 		
 		if(this.queryBuilderType == QueryBuilderType.INSERT) {
+			return this.query;	
+		}
+		
+		if(this.queryBuilderType == QueryBuilderType.CREATE) {
 			return this.query;	
 		}
 		
