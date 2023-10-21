@@ -5,6 +5,10 @@
 - [HTTP спецификация](https://developer.mozilla.org/en-US/docs/Web/HTTP/Resources_and_specifications)
 - [Как работи мрежата](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
 
+## Полезни книжки
+- [Java reflection in action](https://github.com/ankuanand/ImportantJavaBooks/blob/master/Java%20Reflection%20in%20Action%2C%202005.pdf)
+- [Clean code](https://github.com/dev-marko/clean-code-book)
+
 ## Проведени занятия по срещи и дати
 
 #### 🚀 [**Среща 1**](lesson-1) / **[14.10.2023]** - Създаване на базов HTTM сървър
