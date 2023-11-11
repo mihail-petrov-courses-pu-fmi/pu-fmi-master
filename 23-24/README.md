@@ -40,7 +40,7 @@ Enterprice Java проектите, в WEB пространството чест
                 <sub>📅14.10.2023</sub>
             </td>
             <td>
-                <a href="./lesson-1/README.md">
+                <a href="./lesson-01/README.md">
                     Създаване на базов HTTM сървър
                 </a>
             </td>
@@ -59,7 +59,7 @@ Enterprice Java проектите, в WEB пространството чест
                 <sub>📅21.10.2023</sub>
             </td>
             <td>
-                <a href="./lesson-2/README.md">
+                <a href="./lesson-02/README.md">
                     Архитектура на HTTP FrontController
                 </a>            
             </td>
@@ -78,7 +78,7 @@ Enterprice Java проектите, в WEB пространството чест
                 <sub>📅05.11.2023</sub>
             </td>
             <td>
-                <a href="./lesson-3/README.md">
+                <a href="./lesson-03/README.md">
                     Dependancy injection и други HTTP истории
                 </a>
             </td>            
