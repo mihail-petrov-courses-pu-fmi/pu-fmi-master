@@ -1,9 +1,7 @@
 package org.example;
 
 import org.example.server.contracts.HttpRequestObject;
-import org.example.tags.HttpController;
-import org.example.tags.HttpMethod;
-import org.example.tags.Service;
+import org.example.tags.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,9 +16,7 @@ public class HttpServerClassLoader {
     public static void bootstrapApplication() throws IOException, ClassNotFoundException {
 
         // Сканиране на директория - съдържаща контролери
-        ClassLoader appLoader                 = ClassLoader.getSystemClassLoader();
-        InputStream appLoaderStream           =  appLoader.getResourceAsStream("org/example/app");
-        BufferedReader appLoaderStreamReader  = new BufferedReader(new InputStreamReader(appLoaderStream));
+        BufferedReader appLoaderStreamReader = scanDirectory("org/example/app");
 
         // Зареждане на фактическия клас
         String line = "";
@@ -63,10 +59,8 @@ public class HttpServerClassLoader {
 
     public static void bootstrapServices() throws IOException, ClassNotFoundException {
 
-        // Сканиране на директория - съдържаща контролери
-        ClassLoader appLoader                 = ClassLoader.getSystemClassLoader();
-        InputStream appLoaderStream           =  appLoader.getResourceAsStream("org/example/services");
-        BufferedReader appLoaderStreamReader  = new BufferedReader(new InputStreamReader(appLoaderStream));
+        // Сканиране на директория - съдържаща сервиси
+        BufferedReader appLoaderStreamReader = scanDirectory("org/example/services");
 
         // Зареждане на фактическия клас
         String line = "";
@@ -97,4 +91,43 @@ public class HttpServerClassLoader {
     }
 
 
+    public static void bootstrapMiddlewareClasses() throws IOException, ClassNotFoundException {
+
+        BufferedReader bufferedReader = scanDirectory("org/example/middleware");
+
+        // Зареждане на фактическия клас
+        String line = "";
+        while((line = bufferedReader.readLine()) != null) {
+
+            String classPath    = "org.example.middleware." + line.replace(".class", "");
+            Class classInstance =  Class.forName(classPath);
+
+            boolean isClassMiddleware = classInstance.isAnnotationPresent(
+                    HttpMiddleware.class
+            );
+
+            if(!isClassMiddleware) continue;
+
+            Method[] instanceMethodCollection = classInstance.getMethods();
+
+            for(Method instanceMethod : instanceMethodCollection) {
+
+                int modificatorCode     =  instanceMethod.getModifiers();
+                boolean isPublic        = Modifier.isPublic(modificatorCode);
+                boolean hasAnnotation   = instanceMethod.isAnnotationPresent(
+                        org.example.tags.HttpMiddlewareMethod.class
+                );
+                boolean isMethodProcessable = isPublic && hasAnnotation;
+
+                if(!isMethodProcessable) continue;
+                HttpTable.addMiddleware(classInstance, instanceMethod);
+            }
+        }
+    }
+
+    private static BufferedReader scanDirectory(String name) {
+        ClassLoader appLoader = ClassLoader.getSystemClassLoader();
+        InputStream appLoaderStream = appLoader.getResourceAsStream(name);
+        return new BufferedReader(new InputStreamReader(appLoaderStream));
+    }
 }

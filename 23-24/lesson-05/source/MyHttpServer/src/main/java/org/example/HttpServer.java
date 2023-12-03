@@ -1,9 +1,6 @@
 package org.example;
 
 import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.security.cert.CRL;
 
 public class HttpServer {
 
@@ -12,6 +9,7 @@ public class HttpServer {
         try {
             HttpServerClassLoader.bootstrapApplication();
             HttpServerClassLoader.bootstrapServices();
+            HttpServerClassLoader.bootstrapMiddlewareClasses();
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

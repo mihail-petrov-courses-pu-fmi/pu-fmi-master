@@ -3,21 +3,15 @@ package org.example;
 import org.example.server.contracts.HttpRequestObject;
 import org.example.server.contracts.HttpResponseObject;
 import org.example.server.contracts.HttpStatusCodeEnum;
+import org.example.server.contracts.MiddlewareContainer;
 import org.example.server.parsers.MethodReturnTypeParser;
-import org.example.server.types.ControllerJsonResponse;
-import org.example.server.types.ControllerView;
-import org.example.services.MedicationService;
 import org.example.tags.HttpParameterHash;
 
-import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -25,17 +19,11 @@ public class HttpTable {
 
 //    private final static String CRLF = "\r\n";
 
-    private static class ClassMethodComposition {
-        public Class classReference;
-        public Method methodReference;
 
-        public ClassMethodComposition(Class classReference, Method methodReference) {
-            this.classReference = classReference;
-            this.methodReference = methodReference;
-        }
-    }
 
     private static HashMap<String, ClassMethodComposition> httpTable = new HashMap<>();
+
+    private static MiddlewareContainer middlewareContainer = new MiddlewareContainer();
 
     private static HashMap<String, Object> serviceTable = new HashMap<>();
 
@@ -55,6 +43,13 @@ public class HttpTable {
         serviceTable.put(serviceName, instance);
     }
 
+    public static void addMiddleware(
+            Class classReference,
+            Method methodInstance
+    ) {
+        middlewareContainer.addMiddleware(new ClassMethodComposition(classReference, methodInstance));
+    }
+
     public static String processRequest(
             HttpRequestObject request) {
 
@@ -63,6 +58,9 @@ public class HttpTable {
 
         HttpResponseObject httpResponse = new HttpResponseObject();
 
+        if(!middlewareContainer.start(request, httpResponse)) {
+            return httpResponse.getHttpMessage();
+        }
 
         if(classComposition == null) {
 
@@ -148,5 +146,9 @@ public class HttpTable {
 
     private static String getRequestKey(HttpRequestObject request) {
         return request.getHttpPath() + "___" + request.getHttpMethod();
+    }
+
+    public static MiddlewareContainer getMiddlewareContainer() {
+        return middlewareContainer;
     }
 }
