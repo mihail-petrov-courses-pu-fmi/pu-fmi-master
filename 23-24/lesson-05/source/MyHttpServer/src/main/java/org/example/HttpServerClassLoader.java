@@ -120,14 +120,6 @@ public class HttpServerClassLoader {
                 boolean isMethodProcessable = isPublic && hasAnnotation;
 
                 if(!isMethodProcessable) continue;
-
-//                HttpMiddlewareMethod httpMethodAnnotation = instanceMethod.getAnnotation(
-//                        org.example.tags.HttpMiddlewareMethod.class
-//                );
-
-//                String httpMethod           = httpMethodAnnotation.method();
-//                String httpPath             = httpMethodAnnotation.path();
-//                HttpRequestObject response = new HttpRequestObject(httpMethod, httpPath);
                 HttpTable.addMiddleware(classInstance, instanceMethod);
             }
         }
