@@ -8,10 +8,18 @@ import java.io.InputStreamReader;
 public class ApplicationBootstrap {
 
     public static void run(Class applicationClass) {
+
         Package applicationLevelPackage =  applicationClass.getPackage();
         String rootPath = applicationLevelPackage.getName().replace(".", "/");
 
         findAllApplicationComponents(rootPath);
+
+        try {
+            HttpProcessor httpProcessor = new HttpProcessor(3184);
+            httpProcessor.start();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void findAllApplicationComponents(String path) {
@@ -46,6 +54,7 @@ public class ApplicationBootstrap {
             String classFullPath = classPath + "." + className;
 
             Class classReference = Class.forName(classFullPath);
+            DependencyInjectionContainer.addComponent(classReference);
         }
         catch (ClassNotFoundException e) {
             e.printStackTrace();

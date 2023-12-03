@@ -1,5 +1,6 @@
 package org.example.framework;
 
+import org.example.framework.container.ClassMethodComposition;
 import org.example.framework.server.contracts.HttpRequestObject;
 import org.example.framework.server.contracts.HttpResponseObject;
 import org.example.framework.server.contracts.HttpStatusCodeEnum;
@@ -16,46 +17,13 @@ import java.util.HashMap;
 
 public class HttpTable {
 
-//    private final static String CRLF = "\r\n";
-
-    private static class ClassMethodComposition {
-        public Class classReference;
-        public Method methodReference;
-
-        public ClassMethodComposition(Class classReference, Method methodReference) {
-            this.classReference = classReference;
-            this.methodReference = methodReference;
-        }
-    }
-
-    private static HashMap<String, ClassMethodComposition> httpTable = new HashMap<>();
-
-    private static HashMap<String, Object> serviceTable = new HashMap<>();
-
-    public static void addRequest(
-            HttpRequestObject request,
-            Class classReference,
-            Method methodInstance) {
-
-        String tableKey = getRequestKey(request);
-        httpTable.put(tableKey, new ClassMethodComposition(classReference, methodInstance));
-    }
-
-    public static void addService(
-            String serviceName,
-            Object instance
-    ) {
-        serviceTable.put(serviceName, instance);
-    }
-
     public static String processRequest(
             HttpRequestObject request) {
 
         String tableKey                         = getRequestKey(request);
-        ClassMethodComposition classComposition = httpTable.get(tableKey);
+        ClassMethodComposition classComposition = DependencyInjectionContainer.getComponent(tableKey);
 
         HttpResponseObject httpResponse = new HttpResponseObject();
-
 
         if(classComposition == null) {
 
@@ -63,8 +31,6 @@ public class HttpTable {
             httpResponse.setStatusMessage("Error");
             httpResponse.setResponseBody("<h1>Page Not found</h1>");
             return httpResponse.getHttpMessage();
-
-            // return buildHttpResponse("<h1>Page Not found</h1>", "400", "Error");
         }
 
         var resultObject        = executeControllerMethod(classComposition, request, httpResponse);
@@ -74,8 +40,6 @@ public class HttpTable {
         httpResponse.setStatusMessage("Success");
         httpResponse.setResponseBody(httpStringResult);
         return httpResponse.getHttpMessage();
-
-        // return buildHttpResponse(httpStringResult, "200", "Success");
     }
 
     private static Object executeControllerMethod(
@@ -98,8 +62,8 @@ public class HttpTable {
                 for(Type parameterType : constructorParameterTypeCollection) {
 
                     String parameterName    = parameterType.getTypeName();
-                    Object serviceInstance  = serviceTable.get(parameterName);
-                    serviceInstanceCollection.add(serviceInstance);
+                    ClassMethodComposition serviceReference  = DependencyInjectionContainer.getComponent(parameterName);
+                    serviceInstanceCollection.add(serviceReference.getInstance());
                 }
             }
 
@@ -140,6 +104,6 @@ public class HttpTable {
     }
 
     private static String getRequestKey(HttpRequestObject request) {
-        return request.getHttpPath() + "___" + request.getHttpMethod();
+        return  request.getHttpMethod() + ":" + request.getHttpPath();
     }
 }

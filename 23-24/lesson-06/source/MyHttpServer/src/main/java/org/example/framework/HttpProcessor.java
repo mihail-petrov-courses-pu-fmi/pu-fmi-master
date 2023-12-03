@@ -23,6 +23,8 @@ public class HttpProcessor extends Thread {
 
         try {
 
+            System.out.println("Server is listening on port " + this.portNumber);
+
             while(this.isHttpConnectionProcessable()) {
 
                 Socket socket = this.serverSocket.accept();
