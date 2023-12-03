@@ -2,18 +2,20 @@ package org.example.framework;
 
 import org.example.framework.container.ClassMethodComposition;
 import org.example.framework.server.contracts.HttpRequestObject;
-import org.example.framework.tags.HttpController;
-import org.example.framework.tags.HttpMethod;
-import org.example.framework.tags.Service;
+import org.example.framework.tags.*;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 public class DependencyInjectionContainer {
 
     private static HashMap<String, ClassMethodComposition> controllerTable = new HashMap<>();
     private static HashMap<String, ClassMethodComposition> serviceTable = new HashMap<>();
+
+    private static HashMap<String, ClassMethodComposition> entityTable = new HashMap<>();
 
     public static void addComponent(Class classReference) {
 
@@ -23,6 +25,10 @@ public class DependencyInjectionContainer {
 
         if(classReference.isAnnotationPresent(Service.class)) {
             processService(classReference);
+        }
+
+        if(classReference.isAnnotationPresent(CustomEntity.class)) {
+            processEntity(classReference);
         }
     }
 
@@ -36,7 +42,15 @@ public class DependencyInjectionContainer {
             return serviceTable.get(componentId);
         }
 
+        if(entityTable.containsKey(componentId)) {
+            return entityTable.get(componentId);
+        }
+
         return null;
+    }
+
+    public static Collection<ClassMethodComposition> getAllEntity() {
+        return entityTable.values();
     }
 
     private static void processController(Class classReference) {
@@ -69,5 +83,79 @@ public class DependencyInjectionContainer {
 
     private static void processService(Class classReference) {
         serviceTable.put(classReference.getName(), new ClassMethodComposition(classReference));
+    }
+
+    private static void processEntity(Class classReference) {
+        entityTable.put(classReference.getName(), new ClassMethodComposition(classReference));
+    }
+
+    public static Object createInstanceOf(ClassMethodComposition classComposition) {
+
+        try {
+
+            var constructorControllerCollection = classComposition.classReference.getConstructors();
+            ArrayList<Object> serviceInstanceCollection = new ArrayList<>();
+
+            Class[] serviceClassCollection = null;
+
+            for(Constructor element : constructorControllerCollection) {
+                var constructorParameterTypeCollection  = element.getGenericParameterTypes();
+                serviceClassCollection                  = element.getParameterTypes();
+
+                for(Type parameterType : constructorParameterTypeCollection) {
+
+                    String parameterName                        = parameterType.getTypeName();
+                    ClassMethodComposition serviceReference     = getComponent(parameterName);
+                    serviceInstanceCollection.add(serviceReference.getInstance());
+                }
+            }
+
+            return classComposition.classReference.getDeclaredConstructor(
+                    serviceClassCollection
+            ).newInstance(
+                    serviceInstanceCollection.toArray()
+            );
+
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public static boolean isParameterAnnotationPresent(ClassMethodComposition classComposition, Class annotation) {
+
+        var instance = createInstanceOf(classComposition);
+
+        try {
+            Annotation[][] parameterAnnotationCollection =
+                    classComposition.methodReference.getParameterAnnotations();
+
+            // Ако имаш една единствена анотация, която да кореспондира с параметъра
+            if(parameterAnnotationCollection.length == 1) {
+                if(parameterAnnotationCollection[0].length == 1) {
+                    if(parameterAnnotationCollection[0][0].annotationType().getName().equals(annotation.getName())) {
+                        return true;
+                    }
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    public static Object invoke(ClassMethodComposition classComposition, Object... args) {
+
+        try {
+            var instance = createInstanceOf(classComposition);
+            return classComposition.methodReference.invoke(instance);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

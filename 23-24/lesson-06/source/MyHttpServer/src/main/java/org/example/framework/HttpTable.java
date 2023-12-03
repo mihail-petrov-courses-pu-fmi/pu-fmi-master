@@ -48,59 +48,11 @@ public class HttpTable {
             HttpResponseObject response
     ) {
 
-        try {
-
-            // Взимам конструкторите на контролера
-            var constructorControllerCollection = classComposition.classReference.getConstructors();
-            ArrayList<Object> serviceInstanceCollection = new ArrayList<>();
-            Class[] serviceClassCollection = null;
-
-            for(Constructor element : constructorControllerCollection) {
-                var constructorParameterTypeCollection  = element.getGenericParameterTypes();
-                serviceClassCollection                  = element.getParameterTypes();
-
-                for(Type parameterType : constructorParameterTypeCollection) {
-
-                    String parameterName    = parameterType.getTypeName();
-                    ClassMethodComposition serviceReference  = DependencyInjectionContainer.getComponent(parameterName);
-                    serviceInstanceCollection.add(serviceReference.getInstance());
-                }
-            }
-
-            // ИНстанция на контролер
-            var instance = classComposition.classReference.getDeclaredConstructor(
-                    serviceClassCollection
-            ).newInstance(
-                    serviceInstanceCollection.toArray()
-            );
-
-            Annotation[][] parameterAnnotationCollection =
-                    classComposition.methodReference.getParameterAnnotations();
-
-            // Ако имаш една единствена анотация, която да кореспондира с параметъра
-            if(parameterAnnotationCollection.length == 1) {
-                if(parameterAnnotationCollection[0].length == 1) {
-                    if(parameterAnnotationCollection[0][0] instanceof HttpParameterHash) {
-
-                        return classComposition.methodReference.invoke(
-                                instance,
-                                request.getHttpQueryParameterHash()
-                        );
-                    }
-                }
-            }
-
-            return classComposition.methodReference.invoke(instance);
-
-        } catch (InstantiationException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
+        if(DependencyInjectionContainer.isParameterAnnotationPresent(classComposition, HttpParameterHash.class)) {
+            return DependencyInjectionContainer.invoke(classComposition, request.getHttpQueryParameterHash());
         }
+
+        return DependencyInjectionContainer.invoke(classComposition);
     }
 
     private static String getRequestKey(HttpRequestObject request) {

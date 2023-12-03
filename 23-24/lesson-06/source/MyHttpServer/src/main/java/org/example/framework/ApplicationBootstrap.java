@@ -1,5 +1,7 @@
 package org.example.framework;
 
+import org.example.framework.managers.DatabaseMigrationManager;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +15,8 @@ public class ApplicationBootstrap {
         String rootPath = applicationLevelPackage.getName().replace(".", "/");
 
         findAllApplicationComponents(rootPath);
+
+        DatabaseMigrationManager.run();
 
         try {
             HttpProcessor httpProcessor = new HttpProcessor(3184);
