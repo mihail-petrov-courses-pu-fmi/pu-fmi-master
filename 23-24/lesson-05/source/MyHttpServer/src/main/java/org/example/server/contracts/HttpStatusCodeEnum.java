@@ -2,7 +2,7 @@ package org.example.server.contracts;
 
 public enum HttpStatusCodeEnum {
 
-    OK(200), NOT_FOUND(404), CREATED(201);
+    OK(200), NOT_FOUND(404), CREATED(201), FORBIDDEN(403);
 
     private int value;
 
