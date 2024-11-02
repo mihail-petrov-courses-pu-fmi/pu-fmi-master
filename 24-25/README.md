@@ -87,7 +87,7 @@ Enterprice Java проектите, в WEB пространството чест
             </td>
             <td>
                 <a href="./meet-03/README.md">
-                    Архитектура на HTTP Front Controller
+                    Парсване на GET заявки и работа с Reflection
                 </a>            
             </td>
             <td>
