@@ -13,16 +13,16 @@
 **Клиентите** в приложението са дефинирани със следните атрибути:
 <table>
     <tr>
-        <td>id</td>
-        <td>Уникален идентификатор (автоматично генериран от системата)</td>
+        <td width="200">id</td>
+        <td width="800">Уникален идентификатор (автоматично генериран от системата)</td>
     </tr>
     <tr>
-        <td>name</td>
-        <td>Име на клиента</td>
+        <td width="200">name</td>
+        <td width="800">Име на клиента</td>
     </tr>
     <tr>
-        <td>number_of_open_projects</td>
-        <td>Брой на проектите, на конкретен клиент</td>
+        <td width="200">number_of_open_projects</td>
+        <td width="800">Брой на проектите, на конкретен клиент</td>
     </tr>
 </table>
 
@@ -30,15 +30,15 @@
 **Проектите** в приложението са дефинирани със следните атрибути:
 <table>
     <tr>
-        <td width="120">id</td>
+        <td width="200">id</td>
         <td width="800">Уникален идентификатор (автоматично генериран от системата)</td>
     </tr>
     <tr>
-        <td width="120">name</td>
+        <td width="200">name</td>
         <td width="800">Име на клиента</td>
     </tr>
     <tr>
-        <td width="120">cost</td>
+        <td width="200">cost</td>
         <td width="800">Разходи направени по проекта</td>
     </tr>
 </table>
@@ -46,48 +46,48 @@
 **Контакти** в приложението са дефинирани със следните атрибути:
 <table>
     <tr>
-        <td width="120">id</td>
-        <td>Уникален идентификатор (автоматично генериран от системата)</td>
+        <td width="200">id</td>
+        <td width="800">Уникален идентификатор (автоматично генериран от системата)</td>
     </tr>
     <tr>
-        <td width="120">first_name</td>
-        <td>Първо име на контакта</td>
+        <td width="200">first_name</td>
+        <td width="800">Първо име на контакта</td>
     </tr>
     <tr>
-        <td width="120">last_name</td>
-        <td>Фамилия на контакта</td>
+        <td width="200">last_name</td>
+        <td width="800">Фамилия на контакта</td>
     </tr>
     <tr>
-        <td width="120">phone</td>
-        <td>Телефонен номер</td>
+        <td width="200">phone</td>
+        <td width="800">Телефонен номер</td>
     </tr>
     <tr>
-        <td width="120">email</td>
-        <td>Е-mail адрес</td>
+        <td width="200">email</td>
+        <td width="800">Е-mail адрес</td>
     </tr>
 </table>
 
 **Оценките за територията** в приложението са дефинирани със следните атрибути:
 <table>
     <tr>
-        <td width="120">id</td>
-        <td>Уникален идентификатор (автоматично генериран от системата)</td>
+        <td width="200">id</td>
+        <td width="800">Уникален идентификатор (автоматично генериран от системата)</td>
     </tr>
     <tr>
-        <td width="120">name</td>
-        <td>Название на оценяваната територия</td>
+        <td width="200">name</td>
+        <td width="800">Название на оценяваната територия</td>
     </tr>
     <tr>
-        <td width="120">address</td>
-        <td>Адресс на територията</td>
+        <td width="200">address</td>
+        <td width="800">Адресс на територията</td>
     </tr>
     <tr>
-        <td width="120">Configuration cost</td>
-        <td>Разход за оборудване</td>
+        <td width="200">Configuration cost</td>
+        <td width="800">Разход за оборудване</td>
     </tr>
     <tr>
-        <td width="120">Other cost</td>
-        <td>Други разходи</td>
+        <td width="200">Other cost</td>
+        <td width="800">Други разходи</td>
     </tr>
 </table>
 
