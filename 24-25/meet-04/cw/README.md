@@ -21,7 +21,7 @@
         <td width="800">Име на клиента</td>
     </tr>
     <tr>
-        <td width="200">number_of_open_projects</td>
+        <td width="200">Number of open projects</td>
         <td width="800">Брой на проектите, на конкретен клиент</td>
     </tr>
 </table>
@@ -50,11 +50,11 @@
         <td width="800">Уникален идентификатор (автоматично генериран от системата)</td>
     </tr>
     <tr>
-        <td width="200">first_name</td>
+        <td width="200">first name</td>
         <td width="800">Първо име на контакта</td>
     </tr>
     <tr>
-        <td width="200">last_name</td>
+        <td width="200">last name</td>
         <td width="800">Фамилия на контакта</td>
     </tr>
     <tr>
