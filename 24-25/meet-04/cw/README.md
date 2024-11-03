@@ -30,39 +30,39 @@
 **Проектите** в приложението са дефинирани със следните атрибути:
 <table>
     <tr>
-        <td>id</td>
-        <td>Уникален идентификатор (автоматично генериран от системата)</td>
+        <td width="120">id</td>
+        <td width="800">Уникален идентификатор (автоматично генериран от системата)</td>
     </tr>
     <tr>
-        <td>name</td>
-        <td>Име на клиента</td>
+        <td width="120">name</td>
+        <td width="800">Име на клиента</td>
     </tr>
     <tr>
-        <td>cost</td>
-        <td>Разходи направени по проекта</td>
+        <td width="120">cost</td>
+        <td width="800">Разходи направени по проекта</td>
     </tr>
 </table>
 
 **Контакти** в приложението са дефинирани със следните атрибути:
 <table>
     <tr>
-        <td>id</td>
+        <td width="120">id</td>
         <td>Уникален идентификатор (автоматично генериран от системата)</td>
     </tr>
     <tr>
-        <td>first_name</td>
+        <td width="120">first_name</td>
         <td>Първо име на контакта</td>
     </tr>
     <tr>
-        <td>last_name</td>
+        <td width="120">last_name</td>
         <td>Фамилия на контакта</td>
     </tr>
     <tr>
-        <td>phone</td>
+        <td width="120">phone</td>
         <td>Телефонен номер</td>
     </tr>
     <tr>
-        <td>email</td>
+        <td width="120">email</td>
         <td>Е-mail адрес</td>
     </tr>
 </table>
@@ -70,23 +70,23 @@
 **Оценките за територията** в приложението са дефинирани със следните атрибути:
 <table>
     <tr>
-        <td>id</td>
+        <td width="120">id</td>
         <td>Уникален идентификатор (автоматично генериран от системата)</td>
     </tr>
     <tr>
-        <td>name</td>
+        <td width="120">name</td>
         <td>Название на оценяваната територия</td>
     </tr>
     <tr>
-        <td>address</td>
+        <td width="120">address</td>
         <td>Адресс на територията</td>
     </tr>
     <tr>
-        <td>Configuration cost</td>
+        <td width="120">Configuration cost</td>
         <td>Разход за оборудване</td>
     </tr>
     <tr>
-        <td>Other cost</td>
+        <td width="120">Other cost</td>
         <td>Други разходи</td>
     </tr>
 </table>
@@ -97,14 +97,14 @@
 
 
 ### Предварително известни API Ендпойнти:
-- **Потребители**:
+**Потребители**:
 - `GET      /customers`
 - `GET      /customers/:id`
 - `POST     /customers`
 - `PUT      /customers/:id`
 - `DELETE   /customers/:id`
 
-- **Проекти**:
+**Проекти**:
 - `GET      /projects`
 - ??? Всички проекти свързани с даден клиент
 - `GET      /projects/:id`
@@ -112,7 +112,7 @@
 - `PUT      /projects/:id`
 - `DELETE   /projects/:id`
 
-- **Контакти**:
+**Контакти**:
 - `GET      /contacts`
 - ??? Всички контакти свързани с даден проект
 - `GET      /contacts/:id`
@@ -120,7 +120,7 @@
 - `PUT      /contacts/:id`
 - `DELETE   /contacts/:id`
 
-- **Оценявани територии**:
+**Оценявани територии**:
 - `GET      /sites`
 - ??? Всички територии свързани с даден проект
 - `GET      /sites/:id`
