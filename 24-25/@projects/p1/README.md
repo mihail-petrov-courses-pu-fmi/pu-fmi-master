@@ -1,5 +1,5 @@
-<h1>Rent a car</h1>
-<h2>Курсов проект N1</h2>
+<div style="font-size: 32px">Rent a car</div>
+<div>Курсов проект N1</div>
 <!-- # Курсов проект N1
 ## Rent a car -->
 
