@@ -161,7 +161,7 @@ Enterprice Java проектите, в WEB пространството чест
               - Интеграция на Angular;  <br>
             </td>
         </tr>
-<tr>
+        <tr>
             <td>
                 <code>среща 7</code>
                 <br>
