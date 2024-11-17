@@ -1,0 +1,18 @@
+<h1> All Customers</h1>
+
+@for(customerElement of customerCollection; track customerElement ) {
+  <div class="element">
+    <div>{{ customerElement.name }}</div>
+    <div (click)="processOnEdit(customerElement)" class="btn">Edit</div>
+    <div class="btn">Remove</div>
+  </div>
+}
+
+@if(isEditFormVisible) {
+  <!-- Вариант номер 1 -->
+  <input #customerInput
+        (input)="processOnChangeCustomerName(customerInput.value)"
+        [value]="selectedCustomer?.name"
+        type="text">
+  <button (click)="processOnSave()">Save</button>
+}
