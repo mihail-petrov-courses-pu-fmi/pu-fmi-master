@@ -7,14 +7,23 @@ import { CustomerType } from "../models/customer.model";
 })
 export class CustomerService {
 
-  private httpClient = inject(HttpClient);
+  private httpClient  = inject(HttpClient);
+  private baseUrl     = 'http://localhost:8165/customers';
 
   public getAllCustomers() {
-    return this.httpClient.get('http://localhost:8165/customers')
+    return this.httpClient.get(this.baseUrl)
+  }
+
+  public createNewCustomer($customer: CustomerType) {
+    return this.httpClient.post(this.baseUrl, $customer);
   }
 
   public updateCustomer($customer: CustomerType) {
-    return this.httpClient.put('http://localhost:8165/customers', $customer);
+    return this.httpClient.put(this.baseUrl, $customer);
+  }
+
+  public deleteCustomer($id: number) {
+    return this.httpClient.delete(`${this.baseUrl}/${$id}`);
   }
 
 }
