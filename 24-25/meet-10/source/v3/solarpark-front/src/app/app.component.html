@@ -1,0 +1,25 @@
+<h1> All Customers</h1>
+
+<div (click)="processOnCreate()" class="btn">Create customer</div>
+
+@for(customerElement of customerCollection; track customerElement ) {
+  <div class="element">
+    <div>{{ customerElement.name }}</div>
+    <div (click)="processOnEdit(customerElement)" class="btn">Edit</div>
+    <div (click)="processOnDelete(customerElement)" class="btn">Remove</div>
+  </div>
+}
+
+@if(isEditFormVisible && selectedCustomer) {
+  <!-- Вариант номер 1 -->
+  <input [(ngModel)]="selectedCustomer.name"
+        type="text">
+  <button (click)="processOnSave()">Save</button>
+}
+
+
+@if(isCreateFormVisible) {
+  <!-- Вариант номер 1 -->
+  <input #saveInput type="text">
+  <button (click)="processOnCreateCustomer(saveInput.value)">Save</button>
+}
