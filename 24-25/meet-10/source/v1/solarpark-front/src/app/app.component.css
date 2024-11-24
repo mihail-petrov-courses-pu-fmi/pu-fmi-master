@@ -1,0 +1,10 @@
+.element {
+  display: flex;
+}
+
+.btn {
+  display: inline-block;
+  border: solid #dedede;
+  padding: 8px;
+  border-radius: 4px;
+}
