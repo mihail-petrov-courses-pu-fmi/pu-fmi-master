@@ -1,0 +1,62 @@
+2024-11-24 13:06:34.999618+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM td_customers\000d\000a\000d\000aUPDATE [*]td_customers\000d\000aSET name = 'AAA2'\000d\000aWHERE id = 1"; SQL statement:
+SELECT * FROM td_customers
+
+UPDATE td_customers
+SET name = 'AAA2'
+WHERE id = 1 [42000-224]
+2024-11-24 13:07:06.720694+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:08.998555+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:09.767182+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:10.228767+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:12.261375+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:12.725511+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:13.197161+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:14.206160+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:16.996359+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:17.637227+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
+2024-11-24 13:07:17.821383+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE td_customers\000d\000aSET (name [*]= 'AAA3')\000d\000aWHERE id = 1"; expected "., [, ,, )"; SQL statement:
+UPDATE td_customers
+SET (name = 'AAA3')
+WHERE id = 1 [42001-224]
