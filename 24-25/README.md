@@ -227,7 +227,7 @@ Enterprice Java проектите, в WEB пространството чест
                 <code style="background:#d91b5c; color: #fff">упражнение</code>
             </td>
             <td>
-                <a href="./meet-09/README.md">
+                <a href="./meet-10/README.md">
                     Разработка и употреба на Query Builder
                 </a>            
             </td>
@@ -235,6 +235,24 @@ Enterprice Java проектите, в WEB пространството чест
               - Какво е Query Builder; <br>
               - Имплевентация на CRUD операции; <br>
             </td>
-        </tr>           
+        </tr>      
+        <tr>
+            <td>
+                <code>среща 11</code>
+                <br>
+                <sub>📅30.11.2024</sub>
+                <br><br>
+                <code style="background:#d91b5c; color: #fff">упражнение</code>
+            </td>
+            <td>
+                <a href="./meet-11/README.md">
+                    Разработка и употреба на Query Builder
+                </a>            
+            </td>
+            <td>
+              - Разработка на Project Controller / Service / Repo; <br>
+              <!-- - Имплевентация на CRUD операции; <br> -->
+            </td>
+        </tr>               
     <tbody>
 </table>

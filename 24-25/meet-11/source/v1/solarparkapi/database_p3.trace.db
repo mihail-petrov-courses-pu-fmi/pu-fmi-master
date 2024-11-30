@@ -1,0 +1,3 @@
+2024-11-17 13:17:17.376179+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TD_CUSTOMERS" not found; SQL statement:
+SELECT * FROM td_customers WHERE is_active = 1 [42102-224]
