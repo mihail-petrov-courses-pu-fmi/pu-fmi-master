@@ -1,0 +1,31 @@
+<h1> All Customers</h1>
+
+<div (click)="processOnCreate()" class="btn">Create customer</div>
+
+<!-- Външен компонент, който се храни с данни от CustomerPage -->
+<cc-data-grid
+  [inputHeaderConfig] = "dataGridMapping"
+  [inputDataSource]   = "customerCollection"
+
+  [inputIsNavigatable]   = "true"
+  [inputIsRemovable]     = "true"
+
+  (onEdit)            = "processOnEdit($event)"
+  (onRemove)          = "processOnDelete($event)"
+  (onNavigate)        = "processOnNavigate($event)">
+</cc-data-grid>
+
+
+@if(isEditFormVisible && selectedCustomer) {
+  <!-- Вариант номер 1 -->
+  <input [(ngModel)]="selectedCustomer.name"
+        type="text">
+  <button (click)="processOnSave()">Save</button>
+}
+
+
+@if(isCreateFormVisible) {
+  <!-- Вариант номер 1 -->
+  <input #saveInput type="text">
+  <button (click)="processOnCreateCustomer(saveInput.value)">Save</button>
+}

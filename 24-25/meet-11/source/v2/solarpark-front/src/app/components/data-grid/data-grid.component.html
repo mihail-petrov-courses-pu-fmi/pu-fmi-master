@@ -1,0 +1,65 @@
+<table class="data-grid">
+
+  <tr class="data-grid--header">
+    @for(headerElement of inputHeaderConfig; track headerElement)
+    {
+        <td>{{ headerElement.column }}</td>
+    }
+
+    <!-- Кутиики които ще пазят в себе си EDIT и REMOVE -->
+    @if(inputIsNavigatable)
+    {
+      <td>Navigate</td>
+    }
+
+    @if(inputIsEditable)
+    {
+      <td>Edit</td>
+    }
+
+    @if(inputIsRemovable)
+    {
+      <td>Remove</td>
+    }
+  </tr>
+
+  <!-- []  -=> false -->
+  @if(!(inputDataSource?.length))
+  {
+    <div>No data found</div>
+  }
+
+  <!--
+  Генерираме толкова редове, колкото елементи ни се връщат
+       от системата
+  -->
+  @for(dataElement of inputDataSource; track dataElement)
+  {
+    <tr class="data-grid--content">
+      @for(contentElement of inputHeaderConfig; track contentElement)
+      {
+        <!-- КЛЮЧ за достъп до реалната стойност -->
+         <td>
+          {{ dataElement[contentElement.value] }}
+        </td>
+      }
+
+      <!-- Кутиики които ще пазят в себе си EDIT и REMOVE -->
+      @if(inputIsNavigatable)
+      {
+        <td (click)="onNavigate.emit(dataElement)">Navigate</td>
+      }
+
+      @if(inputIsEditable)
+      {
+      <td (click)="onEdit.emit(dataElement)">Edit</td>
+      }
+
+      @if(inputIsRemovable)
+      {
+        <td (click)="onRemove.emit(dataElement)">Remove</td>
+      }
+    </tr>
+  }
+
+</table>
