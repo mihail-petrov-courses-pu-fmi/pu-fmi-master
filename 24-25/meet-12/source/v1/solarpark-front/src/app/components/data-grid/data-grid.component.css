@@ -1,0 +1,19 @@
+.data-grid {
+  width             : 100%;
+  border            : solid #dedede 1px;
+  padding           : 16px;
+  border-collapse   : collapse;
+}
+
+.data-grid tr td {
+  padding: 8px;
+}
+
+.data-grid tr:hover {
+  background: #dedede;
+}
+
+.data-grid--header {
+  font-weight: bold;
+  border-bottom: solid #dedede 1px;
+}
