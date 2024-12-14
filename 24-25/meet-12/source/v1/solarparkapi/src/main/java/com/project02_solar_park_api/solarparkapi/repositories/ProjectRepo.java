@@ -8,7 +8,7 @@ import java.awt.print.Pageable;
 import java.util.List;
 
 public interface ProjectRepo extends JpaRepository<Project, Integer> {
-    List<Project> findByCustomerAndIsActive(Customer customer, int isActive, Pageable pageable);
+//    List<Project> findByCustomerAndIsActive(Customer customer, int isActive, Pageable pageable);
     List<Project> findByCustomerAndIsActive(Customer customer, int isActive);
 
     List<Project> findByCustomer_IdAndIsActive(int customerId, int i);
