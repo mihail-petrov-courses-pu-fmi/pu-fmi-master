@@ -288,6 +288,23 @@ Enterprice Java проектите, в WEB пространството чест
             <td>
               - ???; <br>
             </td>
-        </tr>        
+        </tr>      
+                <tr>
+            <td>
+                <code>среща 14</code>
+                <br>
+                <sub>📅15.12.2024</sub>
+                <br><br>
+                <code style="background:#d91b5c; color: #fff">упражнение</code>
+            </td>
+            <td>
+                <a href="./meet-14/README.md">
+                    Работа с файлове и CSV
+                </a>            
+            </td>
+            <td>
+              - ???; <br>
+            </td>
+        </tr>     
     <tbody>
 </table>
