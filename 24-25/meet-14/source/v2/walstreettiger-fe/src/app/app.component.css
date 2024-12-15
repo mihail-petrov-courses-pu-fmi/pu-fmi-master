@@ -1,0 +1,14 @@
+.watchlist {
+  width         : 600px;
+  padding       : 16px;
+  margin        : auto;
+  border        : solid #dedede 1px;
+  border-radius : 4px;
+}
+
+
+.watchlist-product {
+  display         : flex;
+  justify-content : space-between;
+  padding         : 8px;
+}

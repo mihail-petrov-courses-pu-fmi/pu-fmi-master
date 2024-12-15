@@ -1,0 +1,22 @@
+<div class="watchlist">
+
+  @if(productCollection && productCollection.length == 0)
+  {
+    <div>No products available ...</div>
+  }
+
+
+  @for(productElement of productCollection; track productElement)
+  {
+    <div class="watchlist-product">
+      <div>{{productElement?.companyShortName}}</div>
+      <div>{{productElement?.buyPrice}}</div>
+      <div>{{productElement?.sellPrice}}</div>
+      <div>
+        <button (click)="processBuy(productElement)">Buy</button>
+      </div>
+    </div>
+  }
+
+
+</div>
