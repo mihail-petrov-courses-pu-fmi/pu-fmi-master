@@ -38,6 +38,7 @@ Enterprice Java проектите, в WEB пространството чест
             <th width="120">N</th>
             <th width="280px">Тема</th>
             <th width="610px">Какво разгледахме</th>
+            <th width="110px">Видео</th>
         </tr>
     </thead>
     <tbody>
@@ -61,6 +62,9 @@ Enterprice Java проектите, в WEB пространството чест
             - Разработка на цялостен комуникационен модел, за слушане и връщане на данни. <br>
             - Работа с чисти HTTP заявки, дефинирани в текстов вид            
             </td>
+            <td align="center">
+                <a href="https://youtu.be/f1508qcu6yU">▶️</a>
+            </td>            
         </tr>
         <tr>
             <td>
@@ -71,20 +75,25 @@ Enterprice Java проектите, в WEB пространството чест
                 <code style="background:#d91b5c; color: #fff">упражнение</code>                
             </td>
             <td>
-                <!-- <a href="./meet-02/README.md"> -->
+                <a href="./meet-02/README.md">
                     Първи стъпки в Spring Framework
-                <!-- </a>             -->
+                </a>            
             </td>
             <td>
             - Разлика между библиотеки и работни рамки;  <br>
             - Защо Spring Boot и как ни помажа;  <br>
             - Конфигуриране и стартиране на проект;  <br>
-            - Работа с контролери и сервизи.  <br>
-            - Разбота с конфигурации на проекта <br>
-            - Работа с параметри
+            - Как можем да ползваме рефлекшън, за да изследваме кода;  <br>
+            - Какво представляват анотациите;  <br>
+            - Работа с контролери.  <br>
+            - Работа със сервизи.  <br>
+            - Dependancy injection.  <br>
             </td>
+            <td align="center">
+                <a href="https://youtu.be/wXyvj-nIXO4">▶️</a>
+            </td>            
         </tr>
-        <tr>
+        <!-- <tr>
             <td>
                 <code>среща 3</code>
                 <br>
@@ -93,9 +102,7 @@ Enterprice Java проектите, в WEB пространството чест
                 <code style="background:#6bbe6f; color: #000">лекционна</code>                
             </td>
             <td>
-                <!-- <a href="./meet-03/README.md"> -->
                     Парсване на GET заявки и работа с Reflection
-                <!-- </a>             -->
             </td>
             <td>
             - Какво са проблемите ни до момента - как да си добавим логика за обработка на заявки;  <br>
@@ -114,9 +121,7 @@ Enterprice Java проектите, в WEB пространството чест
                 <code style="background:#d91b5c; color: #fff">упражнение</code>
             </td>
             <td>
-                <!-- <a href="./meet-04/README.md"> -->
-                    Работа с бази данни в Spring Framework
-                <!-- </a>             -->
+                Работа с бази данни в Spring Framework
             </td>
             <td>
             - Закачване на база данни към Spring Boot;  <br>
@@ -132,15 +137,13 @@ Enterprice Java проектите, в WEB пространството чест
                 <code style="background:#d91b5c; color: #fff">лекционна</code>
             </td>
             <td>
-                <!-- <a href="./meet-05/README.md"> -->
-                    Работа с модули 
-                <!-- </a>             -->
+                Работа с модули 
             </td>
             <td>
               - Как работят модулите и как да си разделяме кода;  <br>
               - Парсване на методи и метод базирани анотации;  <br>
               - Парсване на телата на заявките;  <br>
             </td>
-        </tr>
+        </tr> -->
     <tbody>
 </table>

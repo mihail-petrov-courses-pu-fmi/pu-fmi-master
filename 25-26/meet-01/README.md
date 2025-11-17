@@ -8,10 +8,10 @@
 - Работа с чисти HTTP заявки, дефинирани в текстов вид.
 
 #### ▶️ Видео материали от днешната среща
-- [Как работи мрежата](https://youtu.be/fXjQR3pqIYg)
-- [Клиент сървър - част 1](https://youtu.be/eB2eRDi2IVg)
-- [Клиент сървър - част 2](https://youtu.be/aoatWNci5f8)
-- [HTTP сървър - въведение](https://youtu.be/v9zQU8IMSYA)
+- [Как работи мрежата](https://youtu.be/f1508qcu6yU)
+- [Клиент сървър - част 1](https://youtu.be/f1508qcu6yU)
+- [Клиент сървър - част 2](https://youtu.be/f1508qcu6yU)
+- [HTTP сървър - въведение](https://youtu.be/f1508qcu6yU)
 
 #### ⚙️ Необходими инструменти
 - [InteliJ IDEA](https://www.jetbrains.com/)
