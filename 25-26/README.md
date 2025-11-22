@@ -51,7 +51,7 @@ Enterprice Java проектите, в WEB пространството чест
                 <code style="background:#6bbe6f; color: #000">лекционна</code>
             </td>
             <td>
-                <a href="./meet-01/README.md">
+                <a target="_blank" href="./meet-01/README.md">
                     Създаване на базов HTTP сървър
                 </a>
             </td>
@@ -63,7 +63,7 @@ Enterprice Java проектите, в WEB пространството чест
             - Работа с чисти HTTP заявки, дефинирани в текстов вид            
             </td>
             <td align="center">
-                <a href="https://youtu.be/f1508qcu6yU">▶️</a>
+                <a target="_blank" href="https://youtu.be/f1508qcu6yU">▶️</a>
             </td>            
         </tr>
         <tr>
@@ -75,7 +75,7 @@ Enterprice Java проектите, в WEB пространството чест
                 <code style="background:#d91b5c; color: #fff">упражнение</code>                
             </td>
             <td>
-                <a href="./meet-02/README.md">
+                <a target="_blank" href="./meet-02/README.md">
                     Първи стъпки в Spring Framework
                 </a>            
             </td>
@@ -90,7 +90,7 @@ Enterprice Java проектите, в WEB пространството чест
             - Dependancy injection.  <br>
             </td>
             <td align="center">
-                <a href="https://youtu.be/wXyvj-nIXO4">▶️</a>
+                <a target="_blank" href="https://youtu.be/wXyvj-nIXO4">▶️</a>
             </td>            
         </tr>
         <tr>
@@ -102,7 +102,9 @@ Enterprice Java проектите, в WEB пространството чест
                 <code style="background:#6bbe6f; color: #000">лекционна</code>                
             </td>
             <td>
-                Създаване на Routing система
+                <a target="_blank" href="./meet-03/README.md">
+                    Създаване на Routing система
+                </a>
             </td>
             <td>
             - Какво са проблемите ни до момента - как да си добавим логика за обработка на заявки;  <br>
@@ -111,7 +113,7 @@ Enterprice Java проектите, в WEB пространството чест
             - Актуализиране на текущата версия на нашия HTTP сървър
             </td>
             <td align="center">
-                <a href="https://youtu.be/syyx9tvxOu0">▶️</a>
+                <a target="_blank" href="https://youtu.be/syyx9tvxOu0">▶️</a>
             </td>                        
         </tr>
         <!--
