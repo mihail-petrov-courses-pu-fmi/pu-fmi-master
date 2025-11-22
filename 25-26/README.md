@@ -111,7 +111,7 @@ Enterprice Java проектите, в WEB пространството чест
             - Актуализиране на текущата версия на нашия HTTP сървър
             </td>
             <td align="center">
-                <a href="">▶️</a>
+                <a href="https://youtu.be/syyx9tvxOu0">▶️</a>
             </td>                        
         </tr>
         <!--
