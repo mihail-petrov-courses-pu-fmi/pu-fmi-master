@@ -1,0 +1,6 @@
+2025-11-23 10:58:48.287272+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TD_CUSTOMERS" already exists; SQL statement:
+CREATE TABLE td_customers() [42101-232]
+2025-11-23 11:37:50.912129+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO td_customers(name, number_of_projects)VALUES (Solar [*]corp,0);"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO td_customers(name, number_of_projects)VALUES (Solar corp,0); [42001-232]
