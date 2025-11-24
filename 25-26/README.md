@@ -114,9 +114,8 @@ Enterprice Java проектите, в WEB пространството чест
             </td>
             <td align="center">
                 <a target="_blank" href="https://youtu.be/syyx9tvxOu0">▶️</a>
-            </td>                        
+            </td>
         </tr>
-        <!--
         <tr>
             <td>
                 <code>среща 4</code>
@@ -132,7 +131,11 @@ Enterprice Java проектите, в WEB пространството чест
             - Закачване на база данни към Spring Boot;  <br>
             - Работа с JDBCTemplate;  <br>
             </td>
+            <td align="center">
+                <a target="_blank" href="https://youtu.be/6MddmdLizA0">▶️</a>
+            </td>            
         </tr>
+        <!--
         <tr>
             <td>
                 <code>среща 5</code>
