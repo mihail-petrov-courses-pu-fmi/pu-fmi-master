@@ -141,7 +141,7 @@ Enterprice Java проектите, в WEB пространството чест
                 <br>
                 <sub>📅29.11.2024</sub>
                 <br><br>
-                <code style="background:#d91b5c; color: #fff">лекционна</code>
+                <code style="background:#d91b5c; color: #fff">упражнение</code>
             </td>
             <td>
                 Конфигурация и управление на грешки 
@@ -155,5 +155,25 @@ Enterprice Java проектите, в WEB пространството чест
                 <a target="_blank" href="https://youtu.be/xvd8J08r-ds">▶️</a>
             </td>            
         </tr>
+        <tr>
+            <td>
+                <code>среща 6</code>
+                <br>
+                <sub>📅30.11.2024</sub>
+                <br><br>
+                <code style="background:#d91b5c; color: #fff">семинар</code>
+            </td>
+            <td>
+                Семинар - разработка на приложение със Spring Boot 
+            </td>
+            <td>
+              - Архитектура на приложението;  <br>
+              - Разработка на QueryBuilder за работа с бази данни;  <br>
+              - Парсване на телата на заявките;  <br>
+            </td>
+            <td align="center">
+                <a target="_blank" href="https://youtu.be/xvd8J08r-ds">▶️</a>
+            </td>            
+        </tr>        
     <tbody>
 </table>
