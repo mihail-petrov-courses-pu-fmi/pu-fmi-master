@@ -135,7 +135,6 @@ Enterprice Java проектите, в WEB пространството чест
                 <a target="_blank" href="https://youtu.be/6MddmdLizA0">▶️</a>
             </td>            
         </tr>
-        <!--
         <tr>
             <td>
                 <code>среща 5</code>
@@ -145,13 +144,16 @@ Enterprice Java проектите, в WEB пространството чест
                 <code style="background:#d91b5c; color: #fff">лекционна</code>
             </td>
             <td>
-                Работа с модули 
+                Конфигурация и управление на грешки 
             </td>
             <td>
               - Как работят модулите и как да си разделяме кода;  <br>
               - Парсване на методи и метод базирани анотации;  <br>
               - Парсване на телата на заявките;  <br>
             </td>
-        </tr> -->
+            <td align="center">
+                <a target="_blank" href="https://youtu.be/xvd8J08r-ds">▶️</a>
+            </td>            
+        </tr>
     <tbody>
 </table>
