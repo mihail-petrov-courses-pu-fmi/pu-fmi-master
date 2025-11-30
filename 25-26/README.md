@@ -172,7 +172,7 @@ Enterprice Java проектите, в WEB пространството чест
               - Парсване на телата на заявките;  <br>
             </td>
             <td align="center">
-                <a target="_blank" href="https://youtu.be/xvd8J08r-ds">▶️</a>
+                <a target="_blank" href="https://youtu.be/rt4CYbfKRBM">▶️</a>
             </td>            
         </tr>        
     <tbody>

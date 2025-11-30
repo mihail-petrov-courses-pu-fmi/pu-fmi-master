@@ -1,0 +1,6 @@
+2025-11-30 10:07:38.372676+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLYWAY_SCHEMA_HISTORY" not found (candidates are: "flyway_schema_history"); SQL statement:
+select * from flyway_schema_history [42103-232]
+2025-11-30 10:08:26.257938+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLYWAY_SCHEMA_HISTORY" not found (candidates are: "flyway_schema_history"); SQL statement:
+select * from flyway_schema_history [42103-232]
